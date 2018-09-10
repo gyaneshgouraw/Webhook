@@ -1,0 +1,85 @@
+{
+  "name": "design-framework",
+  "description": "React styleguidist basic example",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/styleguidist/react-styleguidist",
+  "author": {
+    "name": "Gyanesh Gouraw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/youplus/styleguide/src/master/"
+  },
+  "main": "./dist/bundle.js",
+  "license": "MIT",
+  "scripts": {
+    "styleguide": "styleguidist server",
+    "build": "styleguidist build",
+    "export": "webpack --config webpack.config.js",
+    "test": "jest  --coverage"
+  },
+  "files": [
+    "/dist"
+  ],
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/config/shim.js",
+      "<rootDir>/config/enzyme-setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/config/*"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/config/*"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 80,
+        "statements": 0
+      }
+    }
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "dependencies": {
+    "dog-names": "^1.0.2",
+    "lodash": "^4.17.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-styleguidist": "^7.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.5.0",
+    "node-sass": "^4.9.3",
+    "pre-commit": "^1.2.2",
+    "react-test-renderer": "^16.4.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.17.1",
+    "webpack-command": "^0.4.1"
+  }
+}
